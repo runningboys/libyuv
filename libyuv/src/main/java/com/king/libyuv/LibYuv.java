@@ -454,7 +454,7 @@ public final class LibYuv {
      * @param dstI420Data   目标I420数据
      * @param degrees       需要旋转的角度；{@link  RotationMode}
      */
-    static native void YUVToI420(ByteBuffer srcYData, ByteBuffer srcUData, ByteBuffer srcVData, int yStride, int uStride, int vStride, int uvPixelStride, int width, int height, byte[] dstI420Data, @RotationMode int degrees);
+    public static native void YUVToI420(ByteBuffer srcYData, ByteBuffer srcUData, ByteBuffer srcVData, int yStride, int uStride, int vStride, int uvPixelStride, int width, int height, byte[] dstI420Data, @RotationMode int degrees);
 
     /**
      * NV21转I420
@@ -464,7 +464,7 @@ public final class LibYuv {
      * @param height      图像高度sca
      * @param dstI420Data 目标I420数据
      */
-    static native void NV21ToI420(byte[] srcNv21Data, int width, int height, byte[] dstI420Data);
+    public static native void NV21ToI420(byte[] srcNv21Data, int width, int height, byte[] dstI420Data);
 
     /**
      * I420转NV21
@@ -474,7 +474,7 @@ public final class LibYuv {
      * @param height      图像高度
      * @param dstNv21Data 目标NV21数据
      */
-    static native void I420ToNV21(byte[] srcI420Data, int width, int height, byte[] dstNv21Data);
+    public static native void I420ToNV21(byte[] srcI420Data, int width, int height, byte[] dstNv21Data);
 
     /**
      * 将I420数据转换为指定格式的数据
@@ -486,7 +486,7 @@ public final class LibYuv {
      * @param dstStride   目标跨距
      * @param fourcc      指定格式
      */
-    static native void ConvertFromI420(byte[] srcI420Data, int width, int height, byte[] dstData, int dstStride, long fourcc);
+    public static native void ConvertFromI420(byte[] srcI420Data, int width, int height, byte[] dstData, int dstStride, long fourcc);
 
     /**
      * 将指定格式的数据转换为I420数据
@@ -503,7 +503,7 @@ public final class LibYuv {
      * @param degrees     需要旋转的角度；{@link  RotationMode}
      * @param fourcc      指定格式
      */
-    static native void ConvertToI420(byte[] srcData, int srcSize, int width, int height, byte[] dstI420Data, int cropX, int cropY, int cropWidth, int cropHeight, @RotationMode int degrees, long fourcc);
+    public static native void ConvertToI420(byte[] srcData, int srcSize, int width, int height, byte[] dstI420Data, int cropX, int cropY, int cropWidth, int cropHeight, @RotationMode int degrees, long fourcc);
 
     /**
      * I420旋转
@@ -514,7 +514,7 @@ public final class LibYuv {
      * @param dstI420Data 目标I420数据
      * @param degrees     需要旋转的角度；{@link  RotationMode}
      */
-    static native void I420Rotate(byte[] srcI420Data, int width, int height, byte[] dstI420Data, @RotationMode int degrees);
+    public static native void I420Rotate(byte[] srcI420Data, int width, int height, byte[] dstI420Data, @RotationMode int degrees);
 
     /**
      * I420缩放
@@ -527,7 +527,7 @@ public final class LibYuv {
      * @param dstHeight   目标高
      * @param filterMode  压缩过滤模式；{@link  FilterMode}
      */
-    static native void I420Scale(byte[] srcI420Data, int width, int height, byte[] dstI420Data, int dstWidth, int dstHeight, @FilterMode int filterMode);
+    public static native void I420Scale(byte[] srcI420Data, int width, int height, byte[] dstI420Data, int dstWidth, int dstHeight, @FilterMode int filterMode);
 
     /**
      * I420裁减
@@ -541,7 +541,7 @@ public final class LibYuv {
      * @param cropWidth   裁减的宽度
      * @param cropHeight  裁减的高度
      */
-    static native void I420Crop(byte[] srcI420Data, int width, int height, byte[] dstI420Data, int cropX, int cropY, int cropWidth, int cropHeight);
+    public static native void I420Crop(byte[] srcI420Data, int width, int height, byte[] dstI420Data, int cropX, int cropY, int cropWidth, int cropHeight);
 
     /**
      * I420镜像
@@ -551,5 +551,5 @@ public final class LibYuv {
      * @param height      图像高度
      * @param dstI420Data 目标I420数据
      */
-    static native void I420Mirror(byte[] srcI420Data, int width, int height, byte[] dstI420Data);
+    public static native void I420Mirror(byte[] srcI420Data, int width, int height, byte[] dstI420Data);
 }

@@ -1,19 +1,7 @@
 # LibYuv
-
-[![MavenCentral](https://img.shields.io/maven-central/v/com.github.jenly1314/libyuv?logo=sonatype)](https://repo1.maven.org/maven2/com/github/jenly1314/libyuv)
-[![JitPack](https://img.shields.io/jitpack/v/github/jenly1314/libyuv?logo=jitpack)](https://jitpack.io/#jenly1314/libyuv)
-[![CI](https://img.shields.io/github/actions/workflow/status/jenly1314/libyuv/build.yml?logo=github)](https://github.com/jenly1314/libyuv/actions/workflows/build.yml)
-[![Download](https://img.shields.io/badge/download-APK-brightgreen?logo=github)](https://raw.githubusercontent.com/jenly1314/libyuv/master/app/release/app-release.apk)
-[![API](https://img.shields.io/badge/API-21%2B-brightgreen?logo=android)](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels)
-[![License](https://img.shields.io/github/license/jenly1314/libyuv?logo=open-source-initiative)](https://opensource.org/licenses/mit)
-
+分叉自：[LibYuv](https://github.com/jenly1314/libyuv)，增加对Android动态库16K页大小支持。
 
 LibYuv：基于Google的libyuv编译封装的YUV转换工具库，主要用途是在各种YUV与RGB之间进行相互转换、裁减、旋转、缩放、镜像等。
-
-## 效果展示
-![Image](GIF.gif)
-
-> 你也可以直接下载 [演示App](https://raw.githubusercontent.com/jenly1314/libyuv/master/app/release/app-release.apk) 体验效果
 
 ## 引入
 
@@ -31,7 +19,7 @@ LibYuv：基于Google的libyuv编译封装的YUV转换工具库，主要用途�
 2. 在Module的 **build.gradle** 中添加依赖项
     ```gradle
     // AndroidX
-    implementation 'com.github.jenly1314:libyuv:1.0.0'
+    implementation 'com.github.runningboys:libyuv:1.0.0'
     ```
 
 ## 使用
@@ -174,22 +162,3 @@ LibYuv.mirror(srcData, width, height, fourcc)
 
 * 还有个小细节需要注意，如果在转换过程中出现转换结果图像的颜色与源图像颜色不一致时，很大可能是数据格式的问题；也就是数据的排列顺序不对，这时只需修改下入参的数据格式就行。
 > 比如：当使用 **RGBA** 数据进行转换操作时，在使用LibYuv时数据的排列顺序是反的，这时需使用 **ABGR** 来表示这个排列（即：指定数据格式为：`FourCC.FOURCC_ABGR`）
-
-## 相关推荐
-
-- [CameraScan](https://github.com/jenly1314/CameraScan) 一个简化扫描识别流程的通用基础库。
-- [MLKit](https://github.com/jenly1314/MLKit) 一个强大易用的工具包。通过ML Kit您可以很轻松的实现文字识别、条码识别、图像标记、人脸检测、对象检测等功能。
-- [WeChatQRCode](https://github.com/jenly1314/WeChatQRCode) 基于OpenCV开源的微信二维码引擎移植的扫码识别库。
-- [ZXingLite](https://github.com/jenly1314/ZXingLite) 基于zxing实现的扫码库，优化扫码和生成二维码/条形码功能。
-- [ViewfinderView](https://github.com/jenly1314/ViewfinderView) ViewfinderView一个取景视图：主要用于渲染扫描相关的动画效果。
-
-<!-- end -->
-
-## 版本日志
-
-#### v1.0.0：2023-4-30
-* libyuv初始版本
-
----
-
-![footer](https://jenly1314.github.io/page/footer.svg)

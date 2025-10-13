@@ -19,7 +19,7 @@ LibYuv：基于Google的libyuv编译封装的YUV转换工具库，主要用途�
 2. 在Module的 **build.gradle** 中添加依赖项
     ```gradle
     // AndroidX
-    implementation 'com.github.runningboys:libyuv:1.0.1'
+    implementation 'com.github.runningboys:libyuv:1.0.2'
     ```
 
 ## 使用

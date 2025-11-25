@@ -1,5 +1,5 @@
 # LibYuv
-分叉自：[LibYuv](https://github.com/jenly1314/libyuv)，增加对Android动态库16K页大小支持。
+分叉自：[LibYuv](https://github.com/jenly1314/libyuv)，增加对Android动态库16K页大小支持，公开更多函数以支持缓存复用。
 
 LibYuv：基于Google的libyuv编译封装的YUV转换工具库，主要用途是在各种YUV与RGB之间进行相互转换、裁减、旋转、缩放、镜像等。
 
@@ -19,7 +19,7 @@ LibYuv：基于Google的libyuv编译封装的YUV转换工具库，主要用途�
 2. 在Module的 **build.gradle** 中添加依赖项
     ```gradle
     // AndroidX
-    implementation 'com.github.runningboys:libyuv:1.0.2'
+    implementation 'com.github.runningboys:libyuv:1.0.3'
     ```
 
 ## 使用

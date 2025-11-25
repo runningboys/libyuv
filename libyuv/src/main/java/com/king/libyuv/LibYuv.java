@@ -66,6 +66,15 @@ public final class LibYuv {
      */
     @NonNull
     public static byte[] imageToI420(Image image, int degrees) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        byte[] dstI420Data = new byte[width * height * 3 >> 1];
+        imageToI420(image, degrees, dstI420Data);
+        return dstI420Data;
+    }
+
+
+    public static void imageToI420(Image image, int degrees, byte[] dstI420Data) {
         Image.Plane[] planes = image.getPlanes();
         ByteBuffer yBuffer = planes[0].getBuffer();
         ByteBuffer uBuffer = planes[1].getBuffer();
@@ -76,7 +85,7 @@ public final class LibYuv {
         int pixelStride = planes[2].getPixelStride();
         int width = image.getWidth();
         int height = image.getHeight();
-        return yuvToI420(yBuffer, uBuffer, vBuffer, yStride, uStride, vStride, pixelStride, width, height, degrees);
+        YUVToI420(yBuffer, uBuffer, vBuffer, yStride, uStride, vStride, pixelStride, width, height, dstI420Data, degrees);
     }
 
     /**
@@ -295,6 +304,20 @@ public final class LibYuv {
     @NonNull
     public static byte[] convertToI420(@NonNull byte[] srcData, int width, int height, @NonNull FourCC fourcc) {
         return convertToI420(srcData, width, height, RotationMode.ROTATE_0, fourcc);
+    }
+
+    /**
+     * 将指定格式的数据转换为I420数据
+     *
+     * @param srcData 源数据
+     * @param width   图像宽度
+     * @param height  图像高度
+     * @param fourcc  指定数据格式；{@link FourCC}
+     * @return 返回I420数据
+     */
+    @NonNull
+    public static void convertToI420(@NonNull byte[] srcData, int width, int height, byte[] dstI420Data, @NonNull FourCC fourcc) {
+        ConvertToI420(srcData, srcData.length, width, height, dstI420Data, 0, 0, width, height, RotationMode.ROTATE_0, fourcc.getCode());
     }
 
     /**

@@ -141,7 +141,7 @@ public enum FourCC {
      *
      * @return 返回数据格式对应的代码值
      */
-    long getCode() {
+    public long getCode() {
         return code;
     }
 
@@ -152,7 +152,7 @@ public enum FourCC {
      * @param height 图像高度
      * @return 返回数据占用字节大小
      */
-    int getTotalBppSize(int width, int height) {
+    public int getTotalBppSize(int width, int height) {
         int size;
         switch (this) {
             // 16
